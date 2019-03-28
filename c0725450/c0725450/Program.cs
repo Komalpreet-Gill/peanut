@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,8 +19,9 @@ namespace c0725450
 
         static async void Download()
         {
-            await Network.Download();
-            Console.WriteLine("Download complete");
+            HttpClient client = new HttpClient();
+            var data = await client.GetStringAsync("http://ibm.com");
+            Console.WriteLine(data);
         }
 
         //static void Download()
