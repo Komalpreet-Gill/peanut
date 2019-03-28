@@ -15,15 +15,28 @@ namespace c0725450
             Download();
             Console.ReadLine();
         }
+
         static void Download()
         {
-            Task.Run( () =>
-            {
-                Thread.Sleep(7000);
-                Console.WriteLine("Download complete");
-            }
-                );
+            Network.Download();
+        }
+
+        //static void Download()
+        //{
+        //    Task.Run( () =>
+        //    {
+        //        Thread.Sleep(7000);
+        //        Console.WriteLine("Download complete");
+        //    }
+        //        );
             
+        //}
+    }
+    class Network
+    {
+        static public Task Download()
+        {
+            return Task.Run(() => Thread.Sleep(3000));
         }
     }
 }
