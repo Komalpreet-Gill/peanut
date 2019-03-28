@@ -17,8 +17,13 @@ namespace c0725450
         }
         static void Download()
         {
-            Thread.Sleep(7000);
-            Console.WriteLine("Download complete");
+            Task.Run( () =>
+            {
+                Thread.Sleep(7000);
+                Console.WriteLine("Download complete");
+            }
+                );
+            
         }
     }
 }
